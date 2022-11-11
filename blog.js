@@ -1,15 +1,18 @@
 //
 
 
-// let lsd=localStorage.setItem("subscriber", JSON.stringify(value));
 
-// function subscriber(){
-//  let x=   document.querySelector("input").value;
-    
-         
-//          console.log(x)
-//        localStorage.setItem("subscriber",JSON.stringify(x) )
-        
-//          alert("You subscribed to  our newsletter")
-// }
-// console.log(lsd)
+
+let form=document.querySelector("form");
+let lsd= JSON.parse(localStorage.getItem("blog-subs"))||[];
+
+form.addEventListener("submit", function(event){
+    event.preventDefault();
+    let sub=document.querySelector("input").value;
+    let obj={
+        sub:form.email.value
+    }
+    lsd.push(sub);
+    localStorage.setItem("blog-subs", JSON.stringify(lsd))
+    alert("your  subscribed to newsletter")
+})
