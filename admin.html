@@ -3,9 +3,112 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin-Page</title>
+    <style>
+      .blogs-subs{
+        border:1px solid red ;
+        width: 80%;
+        margin: auto;
+        margin-top: 30px;
+        text-align: center;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    hello
+    
 </body>
+   <div class="signup-data">
+    <h1 style="text-align:center ;">User Data</h1>
+     <table >
+        <thead>
+
+        
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Password
+            </th>
+        </tr>
+    </thead>
+        <tbody>
+
+        </tbody>
+     </table>
+
+   </div>
+   <div  class="blogs-subs">
+        <div>
+           <h1>Blog-subscribers</h1>
+           <table>
+            
+            <thead>
+               <tr>
+                <th>blog-subscriber list</th>
+               </tr>
+            </thead>
+            <tbody id="secondtable">
+
+            </tbody>
+
+           </table>
+        </div>
+   </div>
+<script>
+//   let data=[];  
+   
+ let lsd=JSON.parse( localStorage.getItem("signup"));
+//  console.log(lsd)
+
+//  document.querySelector("")
+
+function displayTable(lsd){
+        console.log(lsd)
+        lsd.forEach(function(elem){
+
+            let tr=document.createElement("tr");
+    let td1=document.createElement("td");
+    td1.innerText=  elem.name;
+    let td2=document.createElement("td")
+    td2.innerText=elem.email;
+    let td3=document.createElement("td");
+   td3.innerText=elem.pass;
+
+   console.log(td1,td2,td3)
+
+   tr.append(td1, td2, td3);
+   document.querySelector("tbody").append(tr);
+            
+        })
+
+
+}
+
+displayTable(lsd)
+
+  lsd2=JSON.parse(localStorage.getItem("blog-subs"))
+     
+ function displayTable2(lsd2){
+    lsd2.forEach(function(elem){
+        
+        let trow=document.createElement("tr");
+  let tdata=document.createElement("td");
+     tdata.innerText=elem
+     trow.append(tdata);
+  document.querySelector("#secondtable").append(trow);
+    })
+   
+
+  }
+
+  displayTable2(lsd2)
+
+ 
+
+</script>
 </html>
