@@ -24,7 +24,7 @@ form.addEventListener("submit", function(event){
                 alert("login sucessfull")
                 window.location.href="/index.html"
             }else{
-                console.log("wrong credentials")
+                alert("wrong credentials")
             }
         })
 })
