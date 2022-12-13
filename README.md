@@ -4,4 +4,6 @@ Clone of Buffer website
 tech stack used Html,CSS and JavaScript
  <br>
 Changed the Logo and Naming
+<br>
+Basic frontend
 
