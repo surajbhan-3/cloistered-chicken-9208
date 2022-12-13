@@ -1,2 +1,4 @@
 # cloistered-chicken-9208
-unit 2 project
+Clone of Buffer website
+tech stack used Html,CSS and JavaScript
+
